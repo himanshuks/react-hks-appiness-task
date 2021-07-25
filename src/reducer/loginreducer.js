@@ -1,22 +1,22 @@
 import { LOGIN_SUCCESS, LOGOUT_SUCCESS } from "../action/types";
 
 const initialState = {
-  isAuthenticated: null
+  isAuthenticated: null,
 };
 
-export default function(state = initialState, action) {
+export default function (state = initialState, action) {
   switch (action.type) {
     case LOGIN_SUCCESS:
       return {
         ...state,
         ...action.payload,
-        isAuthenticated: true
+        isAuthenticated: true,
       };
     case LOGOUT_SUCCESS:
       return {
         ...state,
         ...action.payload,
-        isAuthenticated: false
+        isAuthenticated: false,
       };
     default:
       return state;
