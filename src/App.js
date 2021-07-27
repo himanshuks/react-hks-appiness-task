@@ -1,7 +1,6 @@
 import React, { Component, Fragment } from "react";
 import { Route, Switch, BrowserRouter as Router } from "react-router-dom";
 
-import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import Dashboard from "./components/Dashboard";
