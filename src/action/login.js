@@ -1,26 +1,27 @@
 import { LOGIN_SUCCESS, LOGOUT_SUCCESS } from "./types";
 import LoginData from "../data/login";
 
-export const checkUser = (username, password) => dispatch => {
+export const checkUser = (username, password) => (dispatch) => {
   let checkUser = "";
   let checkPass = "";
 
-  LoginData.map(x => {
+  LoginData.map((x) => {
     checkUser = x.username;
     checkPass = x.password;
+    return null;
   });
 
   if (checkUser === username && checkPass === password) {
     dispatch({
-      type: LOGIN_SUCCESS
+      type: LOGIN_SUCCESS,
     });
   } else {
     alert("Invalid credentials. Please provide correct details...");
   }
 };
 
-export const logout = () => dispatch => {
+export const logout = () => (dispatch) => {
   dispatch({
-    type: LOGOUT_SUCCESS
+    type: LOGOUT_SUCCESS,
   });
 };
