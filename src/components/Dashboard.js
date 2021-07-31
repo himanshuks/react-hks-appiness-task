@@ -9,7 +9,7 @@ import { logout } from "../action/login";
 class Dashboard extends Component {
   static propTypes = {
     logout: PropTypes.func.isRequired,
-    isAuthenticated: PropTypes.bool
+    isAuthenticated: PropTypes.bool,
   };
 
   render() {
@@ -33,7 +33,7 @@ class Dashboard extends Component {
             </tr>
           </thead>
           <tbody>
-            {Employee.map(x => (
+            {Employee.map((x) => (
               <tr key={x.id}>
                 <td>{x.id}</td>
                 <td>{x.name}</td>
@@ -54,7 +54,7 @@ class Dashboard extends Component {
   }
 }
 
-const mapStateToProps = state => ({
-  isAuthenticated: state.login.isAuthenticated
+const mapStateToProps = (state) => ({
+  isAuthenticated: state.login.isAuthenticated,
 });
 export default connect(mapStateToProps, { logout })(Dashboard);
