@@ -7,21 +7,21 @@ import { checkUser } from "../action/login";
 export class Login extends Component {
   state = {
     username: "",
-    password: ""
+    password: "",
   };
 
   static propTypes = {
     checkUser: PropTypes.func.isRequired,
-    isAuthenticated: PropTypes.bool
+    isAuthenticated: PropTypes.bool,
   };
 
-  onSubmit = e => {
+  onSubmit = (e) => {
     e.preventDefault();
 
     this.props.checkUser(this.state.username, this.state.password);
   };
 
-  onChange = e => this.setState({ [e.target.name]: e.target.value });
+  onChange = (e) => this.setState({ [e.target.name]: e.target.value });
 
   render() {
     if (this.props.isAuthenticated) {
@@ -69,7 +69,7 @@ export class Login extends Component {
     );
   }
 }
-const mapStateToProps = state => ({
-  isAuthenticated: state.login.isAuthenticated
+const mapStateToProps = (state) => ({
+  isAuthenticated: state.login.isAuthenticated,
 });
 export default connect(mapStateToProps, { checkUser })(Login);
